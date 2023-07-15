@@ -1,8 +1,7 @@
-# su6-plugin-template
+# su6-plugin-svelte-check
 
-You can fork or 'use this template' and create your own [su6](https://github.com/trialandsuccess/su6) plugin!
-An example can be found at [su6-plugin-demo](https://github.com/robinvandernoord/su6-plugin-demo).
+Plugin for [su6](https://github.com/trialandsuccess/su6) that adds `svelte-check` functionality.
 
 ## License
 
-`su6-plugin-template` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`su6-plugin-svelte-check` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

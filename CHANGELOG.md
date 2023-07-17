@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.1 (2023-07-17)
+### Documentation
+* **readme:** More informative ([`1c64ef6`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/1c64ef6e75c26e3fe6f985b673444a158f0ee1d1))
+
 ## v0.5.0 (2023-07-17)
 ### Feature
 * Allow defining custom target ([`bcac570`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/bcac57077b53d7c1b8a79d2100309b3448739fc3))

@@ -5,7 +5,7 @@ from pathlib import Path
 
 from su6.plugins import PluginConfig, register, run_tool
 
-from .find_project_root import find_project_root
+from .helpers import chdir, find_project_root
 
 
 @register
@@ -21,12 +21,21 @@ class SvelteCheckPluginConfig(PluginConfig):
 config = SvelteCheckPluginConfig()
 
 
+@register
+def install_svelte_check(target_dir: str = None) -> int:
+    """
+    Install the svelte-check tool using npm.
+    """
+    target_dir = target_dir or "./"
+
+    with chdir(target_dir):
+        return run_tool("npm", "install", "svelte-check")
+
+
 @register(add_to_all=True)
 def svelte_check(strict: bool = None, tsconfig: str = None, node_modules: str = None) -> int:
     """
-    Register a top-level command.
-
-    @register works without ()
+    Run the svelte-check tool.
     """
     config.update(strict=strict, tsconfig=tsconfig)
     # svelte-check --tsconfig ./tsconfig.json --threshold error

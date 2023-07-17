@@ -1,9 +1,16 @@
 """
-Modified from black.files.
+Re-usable helpers for this project.
 """
+
+import contextlib
 from functools import lru_cache
 from pathlib import Path
 from typing import Optional, Sequence, Tuple
+
+try:
+    chdir = contextlib.chdir
+except AttributeError:
+    from contextlib_chdir import chdir  # type: ignore
 
 
 @lru_cache()
@@ -20,6 +27,8 @@ def find_project_root(srcs: Sequence[str], stdin_filename: Optional[str] = None)
     Returns a two-tuple with the first element as the project root path and
     the second element as a string describing the method by which the
     project root was discovered.
+
+    Modified from black.files.
     """
     if stdin_filename is not None:
         srcs = tuple(stdin_filename if s == "-" else s for s in srcs)
@@ -51,3 +60,6 @@ def find_project_root(srcs: Sequence[str], stdin_filename: Optional[str] = None)
             return directory, "pyproject.toml"
 
     return directory, "file system root"
+
+
+__all__ = ["chdir", "find_project_root"]

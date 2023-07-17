@@ -1,7 +1,7 @@
 import contextlib
 from pathlib import Path
 
-from src.su6_plugin_svelte_check.find_project_root import find_project_root
+from src.su6_plugin_svelte_check.helpers import find_project_root
 
 try:
     chdir = contextlib.chdir

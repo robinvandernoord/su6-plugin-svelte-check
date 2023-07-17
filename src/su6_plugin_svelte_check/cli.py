@@ -21,7 +21,7 @@ class SvelteCheckPluginConfig(PluginConfig):
 config = SvelteCheckPluginConfig()
 
 
-@register
+@register(add_to_all=True)
 def svelte_check(strict: bool = None, tsconfig: str = None) -> int:
     """
     Register a top-level command.

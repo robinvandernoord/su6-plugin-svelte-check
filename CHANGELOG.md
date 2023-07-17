@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-07-17)
+
+### Fix
+
+* Require the latest version of su6 ([`6300e97`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/6300e974e732b9b5089490665c80b0d54d0071e9))
+
 ## v0.2.0 (2023-07-17)
 
 ### Feature

@@ -1,16 +1,11 @@
-import contextlib
-import os
 import shutil
 from pathlib import Path
 
+from plumbum import local
 from su6 import app
 from typer.testing import CliRunner
-from plumbum import local
 
-try:
-    chdir = contextlib.chdir
-except AttributeError:
-    from contextlib_chdir import chdir
+from src.su6_plugin_svelte_check.helpers import chdir
 
 runner = CliRunner(mix_stderr=False)
 

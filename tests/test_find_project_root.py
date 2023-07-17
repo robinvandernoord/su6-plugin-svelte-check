@@ -1,4 +1,3 @@
-import contextlib
 from pathlib import Path
 
 from src.su6_plugin_svelte_check.helpers import find_project_root, chdir

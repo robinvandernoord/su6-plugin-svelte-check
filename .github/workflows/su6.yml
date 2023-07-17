@@ -14,4 +14,5 @@ jobs:
           python-version: '3.11'
           cache: 'pip' # caching pip dependencies
       - run: pip install .[all] su6[all]
+      - run: cd pytest_examples; npm install svelte-check; cd ../
       - run: su6 all --coverage 100 --stop-after-first-failure

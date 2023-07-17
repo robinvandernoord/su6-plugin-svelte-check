@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.0 (2023-07-17)
+
+### Feature
+
+* Add svelte-check to `su6 all` ([`b54e102`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/b54e102cdfcbc4e8e1ec9f134cc9c559464ee1f7))
+
 ## v0.1.0 (2023-07-15)
 ### Feature
 * Initial version of plugin ([`7a171b8`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/7a171b8327653ab366e13388471c342ab1c38873))

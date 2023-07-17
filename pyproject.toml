@@ -57,10 +57,14 @@ build_command = "hatch build"
 [tool.su6]
 directory = "src"
 include = []
-exclude = ["svelte-check"] # ironic
+exclude = []
 stop-after-first-failure = true
 coverage = 100
 badge = true
+
+[tool.su6.svelte-check]
+target = "pytest_examples/no_issues"
+node_modules = "pytest_examples/node_modules"
 
 [tool.black]
 target-version = ["py311"]

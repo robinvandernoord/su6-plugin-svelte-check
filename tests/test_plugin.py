@@ -1,4 +1,5 @@
 import contextlib
+import os
 import shutil
 from pathlib import Path
 
@@ -42,7 +43,7 @@ def test_no_issues():
     with chdir("./pytest_examples"):
         prepare_env()
 
-        result = runner.invoke(app, ["svelte-check", "--tsconfig", "./tsconfig-no_issues.json"])
+        result = runner.invoke(app, ["svelte-check", "--target", "./no_issues"])
         print(result.stdout, result.stderr)
         assert result.exit_code == 0
 
@@ -51,7 +52,7 @@ def test_issues():
     with chdir("./pytest_examples"):
         prepare_env()
 
-        result = runner.invoke(app, ["svelte-check", "--tsconfig", "./tsconfig-issues.json"])
+        result = runner.invoke(app, ["svelte-check", "--target", "./issues"])
         print(result.stdout, result.stderr)
         assert result.exit_code == 1
 
@@ -60,10 +61,23 @@ def test_warnings():
     with chdir("./pytest_examples"):
         prepare_env()
 
-        result = runner.invoke(app, ["svelte-check", "--tsconfig", "./tsconfig-warnings.json"])
+        result = runner.invoke(app, ["svelte-check", "--target", "./warnings"])
         print(result.stdout, result.stderr)
         assert result.exit_code == 0
 
-        result = runner.invoke(app, ["svelte-check", "--tsconfig", "./tsconfig-warnings.json", "--strict"])
+        result = runner.invoke(app, ["svelte-check", "--target", "./warnings", "--strict"])
+        print(result.stdout, result.stderr)
+        assert result.exit_code == 1
+
+
+def test_custom_tsconfig():
+    with chdir("./pytest_examples"):
+        prepare_env()
+
+        result = runner.invoke(app, ["svelte-check", "--target", ".", "--tsconfig", "custom_tsconfig.json", "--no-strict"])
+        print(result.stdout, result.stderr)
+        assert result.exit_code == 0
+
+        result = runner.invoke(app, ["svelte-check", "--tsconfig", "custom_tsconfig.json", "--strict"])
         print(result.stdout, result.stderr)
         assert result.exit_code == 1

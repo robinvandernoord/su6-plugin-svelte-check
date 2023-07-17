@@ -1,12 +1,7 @@
 import contextlib
 from pathlib import Path
 
-from src.su6_plugin_svelte_check.helpers import find_project_root
-
-try:
-    chdir = contextlib.chdir
-except AttributeError:
-    from contextlib_chdir import chdir
+from src.su6_plugin_svelte_check.helpers import find_project_root, chdir
 
 
 def test_find_project_root_node_modules():

@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2023-07-17)
+### Fix
+* Don't include node modules in git!! ([`360325c`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/360325c02ed99fb34519941061e9b78679601d61))
+
 ## v0.2.1 (2023-07-17)
 
 ### Fix

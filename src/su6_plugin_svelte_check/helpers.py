@@ -9,7 +9,7 @@ from typing import Optional, Sequence, Tuple
 
 try:
     chdir = contextlib.chdir
-except AttributeError:
+except AttributeError:  # pragma: no cover
     from contextlib_chdir import chdir  # type: ignore
 
 

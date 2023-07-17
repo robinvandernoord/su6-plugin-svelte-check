@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2023-07-17)
+### Feature
+* Add install-svelte-check command ([`84630d2`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/84630d254fd1946d5789f50a427d29024f41b227))
+
 ## v0.3.0 (2023-07-17)
 ### Feature
 * Allow specifying a custom --node-modules directory which should have `svelte-check` ([`db1dc42`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/db1dc42720e7f94020249b6859097b3cb541cda0))

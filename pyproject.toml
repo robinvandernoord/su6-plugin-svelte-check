@@ -57,7 +57,7 @@ build_command = "hatch build"
 [tool.su6]
 directory = "src"
 include = []
-exclude = []
+exclude = ["svelte-check"] # ironic
 stop-after-first-failure = true
 coverage = 100
 badge = true

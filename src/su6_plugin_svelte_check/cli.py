@@ -22,7 +22,7 @@ config = SvelteCheckPluginConfig()
 
 
 @register(add_to_all=True)
-def svelte_check(strict: bool = None, tsconfig: str = None) -> int:
+def svelte_check(strict: bool = None, tsconfig: str = None, node_modules: str = None) -> int:
     """
     Register a top-level command.
 
@@ -30,7 +30,9 @@ def svelte_check(strict: bool = None, tsconfig: str = None) -> int:
     """
     config.update(strict=strict, tsconfig=tsconfig)
     # svelte-check --tsconfig ./tsconfig.json --threshold error
-    root, _ = find_project_root(("node_modules",))
+
+    node_modules = node_modules or "node_modules"
+    root, _ = find_project_root((node_modules,))
     executable = str(root / "node_modules/svelte-check/bin/svelte-check")
 
     args = []

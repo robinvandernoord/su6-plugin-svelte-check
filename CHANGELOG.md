@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2023-07-17)
+### Feature
+* Allow specifying a custom --node-modules directory which should have `svelte-check` ([`db1dc42`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/db1dc42720e7f94020249b6859097b3cb541cda0))
+
 ## v0.2.2 (2023-07-17)
 ### Fix
 * Don't include node modules in git!! ([`360325c`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/360325c02ed99fb34519941061e9b78679601d61))

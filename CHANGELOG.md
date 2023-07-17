@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2023-07-17)
+### Feature
+* Allow defining custom target ([`bcac570`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/bcac57077b53d7c1b8a79d2100309b3448739fc3))
+
 ## v0.4.0 (2023-07-17)
 ### Feature
 * Add install-svelte-check command ([`84630d2`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/84630d254fd1946d5789f50a427d29024f41b227))

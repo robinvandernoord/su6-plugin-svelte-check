@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.2 (2025-11-01)
+
+### Fix
+
+* Move helper 'find_project_root' to core su6 ([`2c91cfa`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/2c91cfad5a52560d66635da8ccae5e60d617db88))
+
 ## v0.5.1 (2023-07-17)
 ### Documentation
 * **readme:** More informative ([`1c64ef6`](https://github.com/robinvandernoord/su6-plugin-svelte-check/commit/1c64ef6e75c26e3fe6f985b673444a158f0ee1d1))

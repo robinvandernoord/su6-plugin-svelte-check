@@ -7,7 +7,7 @@ from typer.testing import CliRunner
 
 from src.su6_plugin_svelte_check.helpers import chdir
 
-runner = CliRunner(mix_stderr=False)
+runner = CliRunner()
 
 
 def prepare_env():

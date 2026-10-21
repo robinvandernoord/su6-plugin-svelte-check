@@ -1,10 +1,9 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.12.4,<0.13"]
+build-backend = "uv_build"
 
 [project]
 name = "su6-plugin-svelte-check" 
-dynamic = ["version"]
 description = 'Svelte-check plugin for `su6`' 
 readme = "README.md"
 requires-python = ">=3.10"
@@ -26,17 +25,15 @@ dependencies = [
     "su6 >= 1.10.0"
 ]
 
+version = "0.5.2"
+
 # https://packaging.python.org/en/latest/guides/creating-and-discovering-plugins/#using-package-metadata
 [project.entry-points."su6"]
 svelte-check = "su6_plugin_svelte_check.cli"  
 
-[template.plugins.default]
-src-layout = true
-
 [project.optional-dependencies]
 dev = [
     "su6[all]",
-    "hatch",
 ]
 
 [project.urls]
@@ -44,16 +41,51 @@ Documentation = "https://github.com/robinvandernoord/su6-plugin-svelte-check#rea
 Issues = "https://github.com/robinvandernoord/su6-plugin-svelte-check/issues" 
 Source = "https://github.com/robinvandernoord/su6-plugin-svelte-check" 
 
-[tool.hatch.version]
-path = "src/su6_plugin_svelte_check/__about__.py" 
+[tool.vommit]
+allow_breaking_bang = true
+allow_breaking_footer = true
+prerelease_token = "beta"
+confirm = true
+ignore = []
 
-[tool.semantic_release]
+[tool.vommit.git]
+enabled = true
+origin = "origin"
 branch = "master"
-version_variable = "src/su6_plugin_svelte_check/__about__.py:__version__"  
-change_log = "CHANGELOG.md"
-upload_to_repository = false
-upload_to_release = false
-build_command = "hatch build"
+on_wrong_branch = "error"
+tag_format = "v{version}"
+commit_format = "{version}"
+
+[tool.vommit.changelog]
+enabled = true
+file = "CHANGELOG.md"
+include_prereleases = false
+placeholder = "<!--next-version-placeholder-->"
+placeholder_regex = "<auto>"
+entry_title_format = "## v{version} ({date:%Y-%m-%d})"
+
+[tool.vommit.changelog.levels]
+feat = "Feature{s}"
+fix = "Fix{es}"
+break = "Breaking Change{s}"
+docs = "Documentation"
+perf = "Performance"
+
+[tool.vommit.pypi]
+enabled = false
+use_keyring = true
+
+[tool.vommit.commands]
+clean = "rm -rf ./dist"
+build = "uv build"
+publish = "uv publish"
+post_publish = ""
+
+[tool.vommit.version_bump_map]
+break = "major"
+feat = "minor"
+fix = "patch"
+perf = "patch"
 
 [tool.su6]
 directory = "src"
